@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         User::factory(10)->create();
+        //Cambio desde PC-house
     }
 }
