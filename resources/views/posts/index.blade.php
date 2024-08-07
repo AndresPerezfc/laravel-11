@@ -3,6 +3,8 @@
 
     <h1>Aquí se mostraran todos los posts</h1>
 
+    <a href="{{ route('posts.create') }}">Crear Post</a>
+
     <ul>
         @foreach ($posts as $post)
             <li>

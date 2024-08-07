@@ -1,3 +1,5 @@
+<a href="/posts">Volver a posts</a>
+
 <h1>Título: {{$post->title}}</h1>
 
 <h3>Contenido:</h3>
