@@ -19,6 +19,7 @@ class PostController extends Controller
 
     public function store(Request $request){
 
+        //función para creación de posts
         $post = new Post();
         $post->title = $request->title;
         $post->category = $request->category;
