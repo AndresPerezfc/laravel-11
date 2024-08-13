@@ -13,7 +13,7 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    // funcion para visuaizar un post
+    // funcion para visuaizar un post a partir de su id
     public function show(Post $post){
         return view('posts.show', compact('post'));
     }
