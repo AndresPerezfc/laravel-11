@@ -20,7 +20,7 @@ class PostController extends Controller
 
     public function store(Request $request){
 
-        //función para creación de posts
+        //función para creación de posts - Guarda en a Base de datos
         $post = new Post();
         $post->title = $request->title;
         $post->category = $request->category;
@@ -30,6 +30,7 @@ class PostController extends Controller
         return redirect('/posts');
     }
 
+    //función para creación de posts
     public function create(){
         return view('posts.create');
     }
