@@ -11,3 +11,7 @@
 <p>
     {{$post->category}}
 </p>
+
+<a href="{{route('posts.edit', $post->id)}}">
+    Editar Post
+</a>
