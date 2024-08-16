@@ -15,3 +15,11 @@
 <a href="{{route('posts.edit', $post->id)}}">
     Editar Post
 </a>
+
+<br>
+<form action="/posts/{{$post->id}}" method="POST">
+    @csrf
+    @method('DELETE')
+
+    <button type="submit">Elimar Post</button>
+</form>

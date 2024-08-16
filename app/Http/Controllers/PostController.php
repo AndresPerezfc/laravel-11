@@ -50,4 +50,12 @@ class PostController extends Controller
         $post->save();
         return redirect("/posts/{$post->id}");
     }
+
+    public function destroy($post){
+
+        $post = Post::find($post);
+        $post->delete();
+
+        return redirect('/posts');
+    }
 }

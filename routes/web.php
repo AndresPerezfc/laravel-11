@@ -19,7 +19,7 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.e
 
 Route::PUT('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 
-
+Route::DELETE('posts/{post}', [PostController::class, 'destroy'])->name('posts.delete');
     
 
 //Test github
