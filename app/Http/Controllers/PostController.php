@@ -9,6 +9,7 @@ class PostController extends Controller
 {
     public function index(){
 
+        //Paginación en controller con parametro de 3 para limitar la cantidad de post
         $posts = Post::orderBy('id', 'desc')->paginate(3);
         return view('posts.index', compact('posts'));
     }
