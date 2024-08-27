@@ -7,9 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Rutas con nombre
-
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+/* Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
@@ -21,7 +19,12 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.e
 
 Route::PUT('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 
-Route::DELETE('posts/{post}', [PostController::class, 'destroy'])->name('posts.delete');
+Route::DELETE('posts/{post}', [PostController::class, 'destroy'])->name('posts.delete'); */
     
+//Route::resource('articulos', PostController::class)->parameters(['articulos' => 'post'])->names('posts');
+
+Route::resource('posts', PostController::class);
+
+Route::apiResource('posts', PostController::class);
 
 //Test github
