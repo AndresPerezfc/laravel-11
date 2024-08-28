@@ -9,6 +9,19 @@
 <body>
     <h1>Edición de Posts</h1>
 
+    @if ($errors->any())
+        <div>
+            <h2>Errores:</h2>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{$error}}    
+                    </li>  
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{route('posts.show', $post->slug)}}" method="POST">
         @csrf
         @method('PUT')

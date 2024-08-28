@@ -35,7 +35,7 @@ class PostController extends Controller
 
         $request->validate([
             'title' => 'required|min:5|max:255',
-            'slug' => 'required',
+            'slug' => 'required|unique:posts',
             'category' => 'required',
             'content' => 'required'
         ]);
@@ -63,6 +63,14 @@ class PostController extends Controller
         $post->content = $request->content;
 
         $post->save(); */
+
+        $request->validate([
+            'title' => 'required|min:5|max:255',
+            'slug' => "required|unique:posts,slug,{$post->id}",
+            'category' => 'required',
+            'content' => 'required'
+        ]);
+
 
         $post->update($request->all());
 
