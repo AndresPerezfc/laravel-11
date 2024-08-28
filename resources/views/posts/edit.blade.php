@@ -28,26 +28,26 @@
         
         <label for="title">
             Título
-            <input type="text" name="title" value="{{$post->title}}">
+            <input type="text" name="title" value="{{old('title', $post->title)}}">
         </label>
 
         <label for="category">
             Categoría
-            <input type="text" name="category" value="{{$post->category}}">
+            <input type="text" name="category" value="{{old('category', $post->category)}}">
         </label>
 
         <br><br>
 
         <label for="slug">
             Slug
-            <input type="text" name="slug" value="{{$post->slug}}">
+            <input type="text" name="slug" value="{{old('slug', $post->slug)}}">
         </label>
 
         <br><br>
 
         <label for="content">
             Contenido
-            <textarea name="content" cols="30" rows="10">{{$post->content}}</textarea>
+            <textarea name="content" cols="30" rows="10">{{old('content', $post->content)}}</textarea>
         </label>
 
         <br><br>
