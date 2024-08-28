@@ -27,26 +27,26 @@
         
         <label for="title">
             Título
-            <input type="text" name="title" >
+            <input type="text" name="title" value="{{old('title')}}">
         </label>
 
         <label for="category">
             Categoría
-            <input type="text" name="category" >
+            <input type="text" name="category" value="{{old('category')}}">
         </label>
 
         <br><br>
 
         <label for="slug">
             Slug
-            <input type="text" name="slug">
+            <input type="text" name="slug" value="{{old('slug')}}">
         </label>
 
         <br><br>
 
         <label for="content">
             Contenido
-            <textarea name="content" cols="30" rows="10"></textarea>
+            <textarea name="content" cols="30" rows="10" value="{{old('content')}}"></textarea>
         </label>
 
         <br><br>
