@@ -22,13 +22,19 @@ class PostController extends Controller
     public function store(Request $request){
 
         //función para creación de posts - Guarda en a Base de datos
-        $post = new Post();
+
+
+        /*$post = new Post();
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
-        $post->save();
+        $post->save(); */ 
+
+
+        Post::create($request->all());
+
         return redirect()->route('posts.index');
         //redirección al nombre de la ruta
     }
@@ -44,12 +50,15 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post){
-        $post->title = $request->title;
+        /*$post->title = $request->title;
         $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
-        $post->save();
+        $post->save(); */
+
+        $post->update($request->all());
+
         //return redirect("/posts/{$post->id}");
         return redirect()->route('posts.show', $post->slug);
     }

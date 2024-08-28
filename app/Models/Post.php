@@ -12,6 +12,17 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'category',
+        'content'
+    ];
+
+    protected $guarded = [
+        'is_active'
+    ]; 
+
     protected function casts(): array{
             return [
                 'published_at' => 'datetime',
