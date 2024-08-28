@@ -24,6 +24,13 @@
 
         <br><br>
 
+        <label for="slug">
+            Slug
+            <input type="text" name="slug">
+        </label>
+
+        <br><br>
+
         <label for="content">
             Contenido
             <textarea name="content" cols="30" rows="10"></textarea>

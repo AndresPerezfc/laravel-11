@@ -9,7 +9,7 @@
 <body>
     <h1>Edición de Posts</h1>
 
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="{{route('posts.show', $post->slug)}}" method="POST">
         @csrf
         @method('PUT')
         
@@ -21,6 +21,13 @@
         <label for="category">
             Categoría
             <input type="text" name="category" value="{{$post->category}}">
+        </label>
+
+        <br><br>
+
+        <label for="slug">
+            Slug
+            <input type="text" name="slug" value="{{$post->slug}}">
         </label>
 
         <br><br>

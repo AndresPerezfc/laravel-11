@@ -12,7 +12,7 @@
     {{$post->category}}
 </p>
 
-<a href="{{route('posts.edit', $post->id)}}">
+<a href="{{route('posts.edit', $post->slug)}}">
     Editar Post
 </a>
 

@@ -24,11 +24,13 @@ class PostController extends Controller
         //función para creación de posts - Guarda en a Base de datos
         $post = new Post();
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
         $post->save();
-        return redirect('/posts');
+        return redirect()->route('posts.index');
+        //redirección al nombre de la ruta
     }
 
     //función para creación de posts
@@ -36,27 +38,27 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function edit($post){
+    public function edit(Post $post){
 
-        $post = Post::find($post);
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, $post){
-        $post = Post::find($post);
+    public function update(Request $request, Post $post){
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
         $post->save();
-        return redirect("/posts/{$post->id}");
+        //return redirect("/posts/{$post->id}");
+        return redirect()->route('posts.show', $post->slug);
     }
 
-    public function destroy($post){
+    public function destroy(Post $post){
 
-        $post = Post::find($post);
+        //dentro de los parametros de la función podemos agregar el modelo Post y ahorrarnos el $post = Post::find($post); Ya que siempre busca por el Id
         $post->delete();
 
-        return redirect('/posts');
+        return redirect()->route('posts.index');
     }
 }

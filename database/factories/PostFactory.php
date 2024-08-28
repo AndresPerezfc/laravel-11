@@ -20,6 +20,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
+            'slug' => $this->faker->slug(),
             'content' => fake()->text(150),
             'category' => $this->faker->randomElement(['Technology', 'Health', 'Lifestyle', 'Education', 'Entertainment']),
         ];
