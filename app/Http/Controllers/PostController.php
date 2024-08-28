@@ -33,6 +33,13 @@ class PostController extends Controller
         $post->save(); */ 
 
 
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'category' => 'required',
+            'content' => 'required'
+        ]);
+
         Post::create($request->all());
 
         return redirect()->route('posts.index');
