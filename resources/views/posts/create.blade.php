@@ -9,17 +9,30 @@
 <body>
     <h1>Creación de Posts</h1>
 
-    <form action="/posts" method="POST">
+    @if ($errors->any())
+        <div>
+            <h2>Errores:</h2>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{$error}}    
+                    </li>  
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{route('posts.store')}}" method="POST">
         @csrf
         
         <label for="title">
             Título
-            <input type="text" name="title">
+            <input type="text" name="title" >
         </label>
 
         <label for="category">
             Categoría
-            <input type="text" name="category">
+            <input type="text" name="category" >
         </label>
 
         <br><br>
