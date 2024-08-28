@@ -46,7 +46,7 @@
 
         <label for="content">
             Contenido
-            <textarea name="content" cols="30" rows="10" value="{{old('content')}}"></textarea>
+            <textarea name="content" cols="30" rows="10">{{old('content')}}</textarea>
         </label>
 
         <br><br>
