@@ -30,10 +30,22 @@
             <input type="text" name="title" value="{{old('title')}}">
         </label>
 
+        @error('title')
+            <p>
+                {{$message}}
+            </p>
+        @enderror
+
         <label for="category">
             Categoría
             <input type="text" name="category" value="{{old('category')}}">
         </label>
+
+        @error('category')
+            <p>
+                {{$message}}
+            </p>
+        @enderror
 
         <br><br>
 
@@ -42,12 +54,24 @@
             <input type="text" name="slug" value="{{old('slug')}}">
         </label>
 
+        @error('slug')
+            <p>
+                {{$message}}
+            </p>
+        @enderror
+
         <br><br>
 
         <label for="content">
             Contenido
             <textarea name="content" cols="30" rows="10">{{old('content')}}</textarea>
         </label>
+
+        @error('content')
+            <p>
+                {{$message}}
+            </p>
+        @enderror
 
         <br><br>
 
