@@ -36,6 +36,13 @@ class StorePostRequest extends FormRequest
         ];
     }
 
+    public function attributes()
+    {
+        return [
+            'slug' => 'Permalink'
+        ];
+    }
+
 
 
 }
