@@ -28,4 +28,14 @@ class StorePostRequest extends FormRequest
             'content' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'El campo Título es obligatorio'
+        ];
+    }
+
+
+
 }
